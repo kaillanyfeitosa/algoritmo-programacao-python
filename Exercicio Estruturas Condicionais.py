@@ -1,5 +1,4 @@
 # EXERCICIO 1 
-'''
 meu_nome = input('Digite seu nome: ')
 minha_idade = int(input('Digite sua idade: '))
 nome_amigo = input('Digite o nome do seu amigo(a): ')
@@ -31,7 +30,7 @@ elif velocidade <= 60:
     print('Situação: REGULAR')
 else: 
     print('Um erro aconteceu. Tente novamente.')
-'''
+
 
 # EXERCICIO 3
 print(' LOJA DA MARIA ')
