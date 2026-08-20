@@ -56,12 +56,12 @@ números e a operação desejada. Imprima o resultado.
 '''
 print('MINI CALCULADORA')
 print('================')
+numero1 = int(input('Digite um número: '))
+numero2 = int(input('Digite outro número: '))
 print('1 - SOMA\n2 - SUBTRAÇÃO\n3 - MULTIPLICAÇÃO\n4 - DIVISÃO')
 resposta = int(input('Digite a operação desejada: '))
+print('================')
 if resposta >=1 and resposta <=4:
-    numero1 = int(input('Digite um número: '))
-    numero2 = int(input('Digite outro número: '))
-    print('================')
     if resposta == 1:
         print('Operação escolhida: SOMA')
         print(f'Resultado: {numero1 + numero2}')
@@ -72,8 +72,13 @@ if resposta >=1 and resposta <=4:
         print('Operação escolhida: MULTIPLICAÇÃO')
         print(f'Resultado: {numero1 * numero2}')
     elif resposta == 4:
-        print('Operação escolhida: DIVISÃO')
-        print(f'Resultado: {numero1 / numero2}')
+        if numero2 == 0 or numero1 == 0:
+            print('OPA! ERRO! Não existe divisão por ZERO.')
+            numero2 = float(input('Digite outro número DIFERENTE DE ZERO: '))
+            print(f'Resultado: {numero1 / numero2}')
+        else:
+            print('Operação escolhida: DIVISÃO')
+            print(f'Resultado: {numero1 / numero2}')
     else: 
         print('Erro detectado.')
 else:
@@ -98,14 +103,12 @@ if lado1 < lado2 + lado3 and lado2 < lado1 + lado3 and lado3 < lado1 + lado2:
     print('As medidas formam um triângulo VÁLIDO!')
     if lado1 == lado2 and lado2 == lado3 and lado3 == lado1:
         print('Classificação: TRIÂNGULO EQUILÁTERO')
-    elif lado1 == lado2 and lado2 != lado3 and lado3 != lado1:
+    elif lado1 == lado2 or lado2 == lado3 or lado3 == lado1:
         print('Classificação: TRIÂNGULO ISÓSCELES')
-    elif lado1 != lado2 and lado2 != lado3 and lado3 != lado1:
-        print('Classificação: TRIÂNGULO ESCALENO')
     else:
-        print('Erro detectado. Tente novamente.')
+        print('Classificação: TRIÂNGULO ESCALENO')
 else: 
-    print('As medidas NÃO formam um triângulo válido!\nTente novamente.')
+    print('As medidas NÃO formam um triângulo válido!')
 print()
 print('===========================')
 print('PROGRAMA FINALIZADO')
@@ -124,14 +127,13 @@ a = float(input('Digite o valor de a: '))
 b = float(input('Digite o valor de b: '))
 c = float(input('Digite o valor de c: '))
 delta = b**2 - 4*a*c
+print(f'O valor de delta é: {delta}')
 if delta > 0:
     print('A equação possui duas raízes reais distintas')
 elif delta == 0:
     print('A equação possui uma raiz real (ou duas raízes reais iguais)')
-elif delta < 0: 
+else:
     print('A equação não possui raízes reais.')
-else: 
-    print('Erro detectado. Tente novamente.')
 print('==========================')
 print('PROGRAMA FINALIZADO')
 
@@ -193,12 +195,12 @@ else:
     print('Erro detectado. Tente novamente.')
 print('===================')
 print('PROGRAMA FINALIZADO')
+
 # VERSAO 2
 print('CÁLCULO DE COMISSÃO')
 print('===================')
 nome = input('Nome do(a) funcionário(a): ')
 valor_venda = float(input('Digite o valor da venda: R$'))
-
 if valor_venda < 0:
     print('Erro detectado. Tente novamente.')
 else:
@@ -210,13 +212,10 @@ else:
         taxa = 0.1
     else:
         taxa = 0.12
-
     comissao = taxa * valor_venda
-
     print(f'Nome do(a) funcionário(a): {nome}')
     print(f'Valor da venda: R${valor_venda:.2f}')
     print(f'Comissão: R${comissao:.2f}')
-
 print('===================')
 print('PROGRAMA FINALIZADO')
 
