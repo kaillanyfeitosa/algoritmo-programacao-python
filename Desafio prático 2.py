@@ -3,7 +3,6 @@
 # EXERCICIO 1 - FATORIAL DE UM NÚMERO
 '''Escreva um programa em Python que
 calcule o fatorial de um número informado pelo usuário'''
-'''
 import math
 print(' === FATORIAL ===')
 num = int(input('Digite um número: '))
@@ -23,13 +22,11 @@ while c > 1:
 
 print(f' = {fatorial}')
 print('FIM DO PROGRAMA')
-'''
 
 # EXERCICIO 2
 '''Faça um programa que calcule
 e escreva o número de anos necessários para que a população do país A
 ultrapasse ou iguale a população do país B, mantidas as taxas de crescimento. 
-'''
 '''
 print('PAÍS A = 90.000 habitantes')
 print('PAÍS B = 200.000 habitantes')
@@ -50,9 +47,18 @@ while pop_a < pop_b:
 print(f'Em {anos} anos a população de A será maior que a de B.')
 print(f'População final de A: {round(pop_a)}')
 print(f'População final de B: {round(pop_b)}')
-'''
 
 # EXERCICIO 3
+'''Resumo estatístico de notas de um curso. Leia as notas de uma turma até que
+o usuário digite algo para sair. Para cada nota válida, determine se o estudante
+foi aprovado, ficou em recuperação ou foi reprovado. Considere aprovado para
+nota maior ou igual a 7,0, recuperação para nota entre 5,0 e 6,9, e reprovação
+para nota inferior a 5,0.
+Ao final, apresente a média da turma, a maior nota, a menor nota, o percentual
+de aprovação e a situação geral da turma. Classifique a turma como “desempenho
+satisfatório” quando o percentual de aprovação for igual ou superior a 70%. 
+'''
+'''
 print('TURMA 007')
 print('=========')
 
@@ -85,3 +91,4 @@ while maiusc != 'SAIR':
     maiusc = resp.upper()
     print('============================')
 print(f'{media:.2f}')
+'''
