@@ -58,37 +58,66 @@ Ao final, apresente a média da turma, a maior nota, a menor nota, o percentual
 de aprovação e a situação geral da turma. Classifique a turma como “desempenho
 satisfatório” quando o percentual de aprovação for igual ou superior a 70%. 
 '''
-'''
-print('TURMA 007')
-print('=========')
+print('TURMA BANCO DE DADOS - PIT')
+print('==========================')
 
 maiusc = ''
 soma = 0
 cont_notas = 0
-
+maior = 0
+menor = 0
+aprovacao = 0
+notas_boas = 0
 while maiusc != 'SAIR':
     print('Digite a nota e nome do aluno(a)')
     nome = input('Nome: ')
     nome_maiusc = nome.title()
     nota = float(input('Nota: '))
-    
+
     if nota >= 0 and nota <= 10:
 
         soma += nota
         cont_notas += 1
         media = soma / cont_notas
+        maior = nota
+        menor = nota
 
         if nota >= 7:
             print('Situação: APROVADO(A)!')
+            notas_boas += 1
         elif nota < 7 and nota >= 5:
-            print('Situação: RECUPERAÇÃO!') 
+            print('Situação: RECUPERAÇÃO!')
         else:
             print('Situação: REPROVADO(A)!')
-    else: 
+
+
+        if nota > maior:
+            maior = nota
+        elif nota < menor:
+            menor = nota
+
+        aprovacao = (notas_boas / cont_notas) * 100
+    else:
         print('Nota inváida!')
+
     print('============================')
     resp = input('[SIM - PARA CONTINUAR]\n[SAIR - PARA FINALIZAR]\nDeseja continuar: ')
     maiusc = resp.upper()
     print('============================')
-print(f'{media:.2f}')
-'''
+print(f'Média da turma: {media:.2f}')
+print(f'Maior nota: {maior}')
+print(f'Menor nota: {menor}')
+print(f'Percentual de aprovação: {aprovacao:.2f}%')
+if aprovacao >= 70:
+    print(f'DESEMPENHO SATISFATÓRIO DA TURMA!')
+
+# EXERCICIO 4
+
+# EXERCICIO 5
+
+# EXERCICIO 6
+
+
+
+
+
